@@ -1,6 +1,7 @@
 package com.stagiaires.stagiaire.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -31,13 +32,13 @@ public class StagiaireController {
 		return stagiaireService.findAll();
 	}
 
-	@RequestMapping(value = "/stagiaires/{id}", method = RequestMethod.GET)
-	public Stagiaire findStagiairebyId(@PathVariable Long id) {
-		Stagiaire s = stagiaireService.findStagiaire(id);
-		return s;
+	@GetMapping(value = "/{id}")
+	public Optional<Stagiaire> findStagiaire(@PathVariable Long id) {
+		return stagiaireService.findStagiaire(id);
+		
 	}
 
-	@RequestMapping(value = "/deleteStagiaire/{id}", method = RequestMethod.DELETE)
+	@RequestMapping( value="/deleteStagiaire{id}", method = RequestMethod.DELETE)
 	public void deleteStagiaire(@PathVariable(name = "id") Long id) {
 		stagiaireService.delete(id);
 

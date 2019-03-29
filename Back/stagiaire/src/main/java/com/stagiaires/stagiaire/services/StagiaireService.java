@@ -34,8 +34,8 @@ public class StagiaireService {
 		return stagiaireRepository.save(s);
 	}
 
-	public Stagiaire findStagiaire(Long id) {
-		return stagiaireRepository.getOne(id);
+	public Optional<Stagiaire> findStagiaire(Long id) {
+		return stagiaireRepository.findById(id);
 	}
 
 	public List<Stagiaire> findAll() {

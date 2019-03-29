@@ -24,11 +24,18 @@ export class TablesComponent implements OnInit {
 }
 )
     }
+    
 affiche() {
     this.stagiaireService.getAll().subscribe(data => {
         this.tabStag = data;
 
 }
 )
+}
+deleteStag(id){
+  this.stagiaireService.deleteStag(id).subscribe((response => {console.log(response); this.stagiaireService.getAll().subscribe(data=>{this.tabStag = data;})
+
+   }))
+
 }
 }

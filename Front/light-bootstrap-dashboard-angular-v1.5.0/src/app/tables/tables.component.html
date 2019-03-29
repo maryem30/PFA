@@ -12,7 +12,7 @@
                               
                                  
                                     <tr *ngFor="let row of tabStag">
-                                       
+                                
                                         <td>{{row.cin}}</td>
                                         <td>{{row.nom}}</td>
                                         <td>{{row.prenom}}</td>
@@ -20,8 +20,8 @@
                                         <td>{{row.date_naissance}}</td>
                                         <td>{{row.email}}</td>
                                         <td>{{row.tel}}</td>
+                                        <td><button class="btn" (click)="deleteStag(row.id)"><i class="fa fa-trash"></i></button></td>
                                     </tr>
-                               
                           </table>
 
                     </div>
