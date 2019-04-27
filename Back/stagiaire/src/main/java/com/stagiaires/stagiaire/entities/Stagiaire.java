@@ -4,12 +4,13 @@ package com.stagiaires.stagiaire.entities;
 import java.io.Serializable;
 import java.sql.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Stagiaire implements Serializable{
@@ -24,6 +25,8 @@ public class Stagiaire implements Serializable{
 	private String prenom;
 	private String cin;
 	private String rib;
+	@ManyToOne(cascade=CascadeType.ALL)
+	private Team team;
 		
 	//@Temporal(TemporalType.DATE)
 	private Date dateNaissance;
