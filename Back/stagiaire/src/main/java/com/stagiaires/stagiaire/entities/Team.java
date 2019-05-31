@@ -2,10 +2,12 @@ package com.stagiaires.stagiaire.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 @Entity
 public class Team implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -15,7 +17,9 @@ public class Team implements Serializable {
 	private Long id;
 	
 	private String teamName;
-	private String teamLeader;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	private TeamLeader teamLeader;
 	public String getTeamName() {
 		return teamName;
 	}
@@ -33,10 +37,10 @@ public class Team implements Serializable {
 	public void setTeamName(String teamName) {
 		this.teamName = teamName;
 	}
-	public String getTeamLeader() {
+	public TeamLeader getTeamLeader() {
 		return teamLeader;
 	}
-	public void setTeamLeader(String teamLeader) {
+	public void setTeamLeader(TeamLeader teamLeader) {
 		this.teamLeader = teamLeader;
 	}
 	}

@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.stagiaires.stagiaire.dao.TeamRepository;
-import com.stagiaires.stagiaire.entities.Stagiaire;
 import com.stagiaires.stagiaire.entities.Team;
 
 @Service
