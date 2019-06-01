@@ -5,8 +5,11 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -38,16 +41,22 @@ public class LeaveController {
 		
 	}
 
-	@RequestMapping( value="/deleteLeave{id}", method = RequestMethod.DELETE)
+	@PostMapping
+	public void addStagiaire(@PathVariable(name = "id") Long id, @RequestBody Leave leave) {
+		leave.setId(id);
+		leaveService.addLeave(leave);
+	}
+	
+	@PutMapping
+	public void updateStagiaire(@PathVariable(name = "id") Long id, @RequestBody Leave leave) {
+		leave.setId(id);
+		leaveService.updateLeave(leave);
+	}
+	
+	@DeleteMapping("/{id}")
 	public void deleteLeave(@PathVariable(name = "id") Long id) {
 		leaveService.delete(id);
-
 	}
-
-	@RequestMapping(value = "/leave/{id}", method = RequestMethod.PUT)
-	public Leave updateStagiaire(@PathVariable(name = "id") Long id, @RequestBody Leave leave) {
-		leave.setId(id);
-		return leaveService.addLeave(leave);
-	}
+	
 
 }

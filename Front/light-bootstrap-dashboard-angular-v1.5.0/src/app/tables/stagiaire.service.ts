@@ -12,7 +12,7 @@ export class StagiaireService {
     return this.http.get('http://localhost:9099/stagiaires/all');
   }
   deleteStag(id: string) {
-    return this.http.delete('http://localhost:9099/stagiaires/deleteStagiaire'+id)
+    return this.http.delete('http://localhost:9099/stagiaires/'+id)
   }
 }
 

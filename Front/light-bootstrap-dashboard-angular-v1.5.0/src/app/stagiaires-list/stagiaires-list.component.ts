@@ -1,4 +1,4 @@
-import { StagiaireService } from './../shared/stagiaire/stagiaire.service';
+import { StagiaireService } from './../tables/stagiaire.service';
 import { Component, OnInit } from '@angular/core';
 
 

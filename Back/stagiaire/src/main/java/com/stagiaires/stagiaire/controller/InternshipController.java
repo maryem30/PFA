@@ -5,8 +5,11 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -38,16 +41,22 @@ public class InternshipController {
 		
 	}
 
-	@RequestMapping( value="/deleteInternship{id}", method = RequestMethod.DELETE)
+	@PostMapping
+	public void addStagiaire(@PathVariable(name = "id") Long id, @RequestBody Internship internship) {
+		internship.setId(id);
+		internshipService.addInternship(internship);
+	}
+	
+	@PutMapping
+	public void updateStagiaire(@PathVariable(name = "id") Long id, @RequestBody Internship internship) {
+		internship.setId(id);
+		internshipService.updateInternship(internship);
+	}
+	
+	
+	@DeleteMapping("/{id}")
 	public void deleteInternship(@PathVariable(name = "id") Long id) {
 		internshipService.delete(id);
-
 	}
-
-	@RequestMapping(value = "/internship/{id}", method = RequestMethod.PUT)
-	public Internship updateStagiaire(@PathVariable(name = "id") Long id, @RequestBody Internship internship) {
-		internship.setId(id);
-		return internshipService.addInternship(internship);
-	}
-
+	
 }

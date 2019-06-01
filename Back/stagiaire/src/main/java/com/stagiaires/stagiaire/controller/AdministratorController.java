@@ -5,8 +5,11 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -38,17 +41,25 @@ public class AdministratorController {
 		
 	}
 
-	@RequestMapping( value="/deleteAdministrator{id}", method = RequestMethod.DELETE)
+	
+	@PostMapping
+	public void addAdministrator(@PathVariable(name = "id") Long id, @RequestBody Administrator administrator) {
+		administrator.setId(id);
+		administratorService.addAdministrator(administrator);
+	}
+	
+	@PutMapping
+	public void updateAdministrator(@PathVariable(name = "id") Long id, @RequestBody Administrator administrator) {
+		administrator.setId(id);
+		administratorService.updateAdministrator(administrator);
+	}
+	
+	@DeleteMapping("/{id}")
 	public void deleteAdministrator(@PathVariable(name = "id") Long id) {
 		administratorService.delete(id);
 
 	}
-
-	@RequestMapping(value = "/administrator/{id}", method = RequestMethod.PUT)
-	public Administrator updateAdministrator(@PathVariable(name = "id") Long id, @RequestBody Administrator administrator) {
-		administrator.setId(id);
-		return administratorService.addAdministrator(administrator);
-	}
+	
 	
 
 }

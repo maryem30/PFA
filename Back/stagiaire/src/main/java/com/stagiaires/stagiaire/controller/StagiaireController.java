@@ -5,8 +5,11 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -37,18 +40,24 @@ public class StagiaireController {
 		return stagiaireService.findStagiaire(id);
 		
 	}
-
-	@RequestMapping( value="/deleteStagiaire{id}", method = RequestMethod.DELETE)
+	
+	@PostMapping
+	public void addStagiaire(@PathVariable(name = "id") Long id, @RequestBody Stagiaire stagiaire) {
+		stagiaire.setId(id);
+		stagiaireService.addStagiaire(stagiaire);
+	}
+	
+	@PutMapping
+	public void updateStagiaire(@PathVariable(name = "id") Long id, @RequestBody Stagiaire stagiaire) {
+		stagiaire.setId(id);
+		stagiaireService.updateStagiaire(stagiaire);
+	}
+	
+	@DeleteMapping("/{id}")
 	public void deleteStagiaire(@PathVariable(name = "id") Long id) {
 		stagiaireService.delete(id);
-
 	}
-
-	@RequestMapping(value = "/stagiaire/{id}", method = RequestMethod.PUT)
-	public Stagiaire updateStagiaire(@PathVariable(name = "id") Long id, @RequestBody Stagiaire stagiaire) {
-		stagiaire.setId(id);
-		return stagiaireService.addStagiaire(stagiaire);
-	}
+	
 	
 
 }

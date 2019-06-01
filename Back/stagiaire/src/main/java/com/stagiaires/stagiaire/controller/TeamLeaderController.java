@@ -5,8 +5,11 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -38,17 +41,23 @@ public class TeamLeaderController {
 		
 	}
 
-	@RequestMapping( value="/deleteTeamLeader{id}", method = RequestMethod.DELETE)
+	@PostMapping
+	public void addTeamLeader(@PathVariable(name = "id") Long id, @RequestBody TeamLeader teamLeader) {
+		teamLeader.setId(id);
+		teamLeaderService.addTeamLeader(teamLeader);
+	}
+	
+	@PutMapping
+	public void updateTeamLeader(@PathVariable(name = "id") Long id, @RequestBody TeamLeader teamLeader) {
+		teamLeader.setId(id);
+		teamLeaderService.updateTeamLeader(teamLeader);
+	}
+	
+	@DeleteMapping("/{id}")
 	public void deleteTeamLeader(@PathVariable(name = "id") Long id) {
 		teamLeaderService.delete(id);
-
 	}
-
-	@RequestMapping(value = "/teamLeader/{id}", method = RequestMethod.PUT)
-	public TeamLeader updateTeamLeader(@PathVariable(name = "id") Long id, @RequestBody TeamLeader teamLeader) {
-		teamLeader.setId(id);
-		return teamLeaderService.addTeamLeader(teamLeader);
-	}
+	
 	
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StagiaireService } from '../shared/stagiaire/stagiaire.service';
+import { StagiaireService } from './stagiaire.service';
  declare interface TableData {
     headerRow: string[];
     dataRows: string[][];
