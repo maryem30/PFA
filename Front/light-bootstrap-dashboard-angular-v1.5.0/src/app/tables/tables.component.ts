@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StagiaireService } from './stagiaire.service';
+import { User } from './../shared/User'
+
  declare interface TableData {
     headerRow: string[];
     dataRows: string[][];
@@ -11,6 +13,8 @@ import { StagiaireService } from './stagiaire.service';
   styleUrls: ['./tables.component.css']
 })
 export class TablesComponent implements OnInit {
+
+    public user : User;
     public tableData1: TableData;
     public tableData2: TableData;
     public tabStag: Array <any>;
@@ -23,6 +27,7 @@ export class TablesComponent implements OnInit {
 
 }
 )
+    
     }
     
 affiche() {

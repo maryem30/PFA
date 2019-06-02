@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder,Validators,ReactiveFormsModule } from '@angular/forms'
+import {NgForm } from '@angular/forms'
 import { User } from './../shared/User'
 
 
@@ -16,31 +16,23 @@ export class UserComponent implements OnInit {
   
 
   user: User;
-  userForm: FormGroup;
 
-  
-  
+  constructor() {
 
-  constructor( private fb: FormBuilder) { 
-    this.userForm = this.fb.group({
-      email:['',Validators.required],
-      Password:'',
-      First_Name:'',
-      Last_Name:'',
-      cin:''
-
-    });
   }
 
   ngOnInit() {
     
   }
 
-  addUser(){
-    this.user= this.userForm.value;
+  saveStagiaire(stagiaireForm: NgForm): void {
+    this.user=stagiaireForm.value;
+    console.log(this.user);
     
+
+  }
     
   }
   
 
-}
+

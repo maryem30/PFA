@@ -1,6 +1,4 @@
 import { StagiaireService } from './tables/stagiaire.service';
-
-
 import { FormGroup, FormBuilder,Validators,ReactiveFormsModule } from '@angular/forms'
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,7 +23,6 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   imports: [
     BrowserAnimationsModule,
-    FormsModule,
     RouterModule,
     HttpModule,
     NavbarModule,
@@ -33,11 +30,13 @@ import { HttpClientModule } from '@angular/common/http';
     SidebarModule,
     AppRoutingModule,
     HttpClientModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    
   ],
   providers: [StagiaireService],
   bootstrap: [AppComponent]
