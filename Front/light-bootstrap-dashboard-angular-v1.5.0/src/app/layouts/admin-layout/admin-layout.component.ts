@@ -52,10 +52,7 @@ export class AdminLayoutComponent implements OnInit {
            elemMainPanel.scrollTop = 0;
            elemSidebar.scrollTop = 0;
       });
-      if (window.matchMedia(``).matches && !this.isMac()) {
-          let ps = new PerfectScrollbar(elemMainPanel);
-          ps = new PerfectScrollbar(elemSidebar);
-      }
+      
   }
   ngAfterViewInit() {
       this.runOnRouteChange();
@@ -71,18 +68,8 @@ export class AdminLayoutComponent implements OnInit {
       }
   }
   runOnRouteChange(): void {
-    if (window.matchMedia('').matches && !this.isMac()) {
-      const elemMainPanel = <HTMLElement>document.querySelector('.main-panel');
-      const ps = new PerfectScrollbar(elemMainPanel);
-      ps.update();
-    }
+    
   }
-  isMac(): boolean {
-      let bool = false;
-      if (navigator.platform.toUpperCase().indexOf('MAC') >= 0 || navigator.platform.toUpperCase().indexOf('IPAD') >= 0) {
-          bool = true;
-      }
-      return bool;
-  }
+  
 
 }

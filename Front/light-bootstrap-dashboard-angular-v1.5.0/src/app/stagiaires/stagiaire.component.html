@@ -3,12 +3,24 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="header">
-                        <h4 class="title">Striped Table with Hover</h4>
-                        <p class="category">Here is a subtitle for this table</p>
-                    </div>
-                    <div class="content table-responsive table-full-width">
-                          <table class="table table-hover table-striped">
+                    <div class="content table-responsive table-full-width">         
+                        <div class="col-md-3">
+                         <div class="form-group">                 
+                            <input class="form-control form-control-sm ml-3 w-75" type="text" name="" #myInput  [(ngModel)]="nom" (input)="Search()" placeholder="Search First name" aria-label="Search">
+                            </div>                                       
+                        </div>
+                          
+                        <table class="table table-hover table-striped">
+                                <tr> <th>cin</th>
+                                    <th>nom </th> 
+                                    <th>prenom</th> 
+                                  <!--  <th>rib</th> 
+                                    <th>date_Naissance</th> -->
+                                    <th>email</th>
+                                     <th>tel</th>
+                                     <th>supprimer</th>
+                                   </tr>
+        
                               
                                  
                                     <tr *ngFor="let row of tabStag">
@@ -16,8 +28,8 @@
                                         <td>{{row.cin}}</td>
                                         <td>{{row.nom}}</td>
                                         <td>{{row.prenom}}</td>
-                                        <td>{{row.rib}}</td>
-                                        <td>{{row.date_naissance}}</td>
+                                        <!--<td>{{row.rib}}</td>
+                                        <td>{{row.date_naissance}}</td>-->
                                         <td>{{row.email}}</td>
                                         <td>{{row.tel}}</td>
                                         <td><button class="btn" (click)="deleteStag(row.id)"><i class="fa fa-trash"></i></button></td>

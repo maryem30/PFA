@@ -8,4 +8,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'user',           component: UserComponent },
     { path: 'table',          component: TablesComponent },
     { path: 'stagiaire-list',        component: StagiairesListComponent },
+    { path: 'move',          component: TablesComponent }
 ];

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {NgForm, FormGroup } from '@angular/forms'
-import { User } from './../shared/User'
+import { FormGroup } from '@angular/forms'
 import { StagiaireService } from './stagiaire.service';
+import {Router} from '@angular/router';
+
 
 
 
@@ -10,9 +11,7 @@ import { StagiaireService } from './stagiaire.service';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-
 export class UserComponent implements OnInit {
-  
   
   
 
@@ -21,11 +20,12 @@ export class UserComponent implements OnInit {
   stagiaireForm : FormGroup
 
 
-  constructor(private  stagiaireService: StagiaireService) {
+  constructor(private  stagiaireService: StagiaireService,private router: Router) {
 
   }
 
   ngOnInit() {
+
     
   }
 
@@ -46,6 +46,9 @@ affiche() {
       }
     );
     console.log(user);
+    this.router.navigate(['/move']);
+
+
     
   }
 

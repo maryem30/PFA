@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app.routing';
 import { NavbarModule } from './shared/navbar/navbar.module';
 import { FooterModule } from './shared/footer/footer.module';
 import { SidebarModule } from './sidebar/sidebar.module';
+import {Router} from '@angular/router';
 
 import { AppComponent } from './app.component';
 
@@ -31,7 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule, 
     ReactiveFormsModule,
-    FormsModule,
+    FormsModule
    
   ],
   declarations: [

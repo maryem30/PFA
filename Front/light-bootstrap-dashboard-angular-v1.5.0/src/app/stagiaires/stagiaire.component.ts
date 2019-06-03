@@ -18,7 +18,8 @@ export class TablesComponent implements OnInit {
     public tableData1: TableData;
     public tableData2: TableData;
     public tabStag: Array <any>;
-
+    public nom : String;
+    public contractTypeValid = "False"
   constructor(private  stagiaireService: StagiaireService) { }
 
   ngOnInit() {
@@ -42,6 +43,17 @@ deleteStag(id){
 
    }))
 
+}
+
+Search(){
+  if (this.nom != "") {
+      this.tabStag = this.tabStag.filter(response => {return response.nom.toLocaleLowerCase().match(this.nom.toLocaleLowerCase());
+      });
+
+  }
+  else if (this.nom == "" ){
+      this.ngOnInit();
+  }
 }
 
 }
