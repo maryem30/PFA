@@ -41,13 +41,13 @@ public class StagiaireController {
 		
 	}
 	
-	@PostMapping
-	public void addStagiaire(@PathVariable(name = "id") Long id, @RequestBody Stagiaire stagiaire) {
-		stagiaire.setId(id);
+	@PostMapping()
+	public Stagiaire addStagiaire(@RequestBody Stagiaire stagiaire) {
 		stagiaireService.addStagiaire(stagiaire);
+		return stagiaire;
 	}
 	
-	@PutMapping
+	@PutMapping()
 	public void updateStagiaire(@PathVariable(name = "id") Long id, @RequestBody Stagiaire stagiaire) {
 		stagiaire.setId(id);
 		stagiaireService.updateStagiaire(stagiaire);

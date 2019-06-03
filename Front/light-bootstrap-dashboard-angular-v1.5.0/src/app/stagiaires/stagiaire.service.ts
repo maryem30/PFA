@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
+import {NgForm } from '@angular/forms'
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { User } from 'app/shared/User';
 
 @Injectable()
 export class StagiaireService {
+  user : User;
 
   constructor(private http: HttpClient) {
   }
@@ -13,6 +16,9 @@ export class StagiaireService {
   }
   deleteStag(id: string) {
     return this.http.delete('http://localhost:9099/stagiaires/'+id)
+  }
+  add(stagiaire: User): Observable<any> {
+    return this.http.post('http://localhost:9099/stagiaires/',stagiaire);
   }
 }
 

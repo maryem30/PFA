@@ -1,4 +1,4 @@
-import { StagiaireService } from './../tables/stagiaire.service';
+import { StagiaireService } from './../stagiaires/stagiaire.service';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -8,12 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stagiaires-list.component.scss']
 })
 export class StagiairesListComponent implements OnInit {
+  public tabStag: Array <any>;
   stagiaires: Array<any>;
   constructor(private stagiaireService: StagiaireService) { }
 
   ngOnInit() {
     this.stagiaireService.getAll().subscribe(data => {
-      this.stagiaires = data;
-    });
+      this.tabStag = data;
+
+}
+)
+
   }
  }

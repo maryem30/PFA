@@ -26,7 +26,8 @@ public class StagiaireService {
 	}
 
 	public Stagiaire addStagiaire(Stagiaire s) {
-		return stagiaireRepository.saveAndFlush(s);
+		stagiaireRepository.save(s);
+		return s;
 	}
 
 	public void deleteStagiaire(Long id) {

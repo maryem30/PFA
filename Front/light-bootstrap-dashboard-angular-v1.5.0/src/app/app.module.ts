@@ -1,4 +1,4 @@
-import { StagiaireService } from './tables/stagiaire.service';
+import { StagiaireService } from './stagiaires/stagiaire.service';
 import { FormGroup, FormBuilder,Validators,ReactiveFormsModule } from '@angular/forms'
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -31,7 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule, 
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+   
   ],
   declarations: [
     AppComponent,

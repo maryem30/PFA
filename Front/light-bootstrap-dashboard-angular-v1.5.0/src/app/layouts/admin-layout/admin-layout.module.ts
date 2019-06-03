@@ -8,8 +8,8 @@ import { NguiMapModule} from '@ngui/map';
 
 import { AdminLayoutRoutes } from './admin-layout.routing';
 
-import { UserComponent } from '../../user/user.component';
-import { TablesComponent } from '../../tables/tables.component';
+import { UserComponent } from '../../stagiaires/user.component';
+import { TablesComponent } from '../../stagiaires/stagiaire.component';
 import { StagiairesListComponent } from '../../stagiaires-list/stagiaires-list.component';
 
 

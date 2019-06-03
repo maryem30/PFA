@@ -9,8 +9,8 @@ import { User } from './../shared/User'
 
 @Component({
   selector: 'app-tables',
-  templateUrl: './tables.component.html',
-  styleUrls: ['./tables.component.css']
+  templateUrl: './stagiaire.component.html',
+  styleUrls: ['./stagiaire.component.css']
 })
 export class TablesComponent implements OnInit {
 
@@ -43,4 +43,5 @@ deleteStag(id){
    }))
 
 }
+
 }
