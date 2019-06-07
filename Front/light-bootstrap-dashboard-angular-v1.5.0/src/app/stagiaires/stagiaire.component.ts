@@ -19,30 +19,44 @@ export class TablesComponent implements OnInit {
     public tableData2: TableData;
     public tabStag: Array <any>;
     public nom : String;
-    public contractTypeValid = "False"
+    public contractTypeValid = "False";
+    private page:number = 0;
+    private pages:Array<any>;
+    private i:number;
+
   constructor(private  stagiaireService: StagiaireService) { }
 
   ngOnInit() {
-    this.stagiaireService.getAll().subscribe(data => {
-        this.tabStag = data;
-
-}
-)
+    this.getSatgiairePage();
+} 
+setPage(i,event:any){
+  this.i=i;
+  event.preventDefault();
+  this.page=i;
+  this.getSatgiairePage();
+} 
     
-    }
     
 affiche() {
     this.stagiaireService.getAll().subscribe(data => {
         this.tabStag = data;
 
+});
 }
-)
+
+getSatgiairePage(){
+  this.stagiaireService.getSatgiaire(this.page).subscribe(data =>{
+    this.tabStag = data['content'];
+    this.pages= new Array(data['totalPages']);
+  });
 }
-deleteStag(id){
+
+deleteStag(id,i,event:any){
   this.stagiaireService.deleteStag(id).subscribe((response => {console.log(response); this.stagiaireService.getAll().subscribe(data=>{this.tabStag = data;})
 
-   }))
-
+  }));
+  this.setPage(i,event);
+  
 }
 
 Search(){

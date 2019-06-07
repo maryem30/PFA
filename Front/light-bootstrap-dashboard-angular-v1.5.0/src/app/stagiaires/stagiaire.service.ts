@@ -20,6 +20,10 @@ export class StagiaireService {
   add(stagiaire: User): Observable<any> {
     return this.http.post('http://localhost:9099/stagiaires/',stagiaire);
   }
+
+  getSatgiaire(page:number){
+    return this.http.get('http://localhost:9099/stagiaires/page?page='+page);
+  }
 }
 
 
