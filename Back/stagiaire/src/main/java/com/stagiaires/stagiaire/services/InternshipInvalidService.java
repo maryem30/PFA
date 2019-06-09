@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.stagiaires.stagiaire.dao.InternshipInvalidRepository;
 import com.stagiaires.stagiaire.entities.InternshipInvalid;
-import com.stagiaires.stagiaire.entities.InternshipValid;
 
 @CrossOrigin("*")
 @Service
@@ -26,19 +25,19 @@ public class InternshipInvalidService {
 		this.internshipRepository = internshipRepository;
 	}
 
-	public InternshipInvalid addInternshipInvalid(InternshipInvalid s) {
-		return internshipRepository.saveAndFlush(s);
+	public InternshipInvalid addInternshipInvalid(InternshipInvalid internshipInvalid) {
+		return internshipRepository.saveAndFlush(internshipInvalid);
 	}
 
 	public void deleteInternshipInvalid(Long id) {
-		Optional<InternshipInvalid> s = internshipRepository.findById(id);
-		if (s != null)
-			internshipRepository.delete(s.get());
+		Optional<InternshipInvalid> internshipInvalid = internshipRepository.findById(id);
+		if (internshipInvalid != null)
+			internshipRepository.delete(internshipInvalid.get());
 	}
 
-	public InternshipInvalid updateInternshipInvalid(InternshipInvalid s) {
-		return internshipRepository.save(s);
-	}	
+	public InternshipInvalid updateInternshipInvalid(InternshipInvalid internshipInvalid) {
+		return internshipRepository.save(internshipInvalid);
+	}
 
 	public Optional<InternshipInvalid> findInternshipInvalid(Long id) {
 		return internshipRepository.findById(id);
@@ -50,7 +49,7 @@ public class InternshipInvalidService {
 
 	public void delete(Long id) {
 		internshipRepository.deleteById(id);
-		
+
 	}
 
 }

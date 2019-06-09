@@ -25,18 +25,18 @@ public class InternshipValidService {
 		this.internshipValidRepository = internshipValidRepository;
 	}
 
-	public InternshipValid addInternshipValid(InternshipValid s) {
-		return internshipValidRepository.saveAndFlush(s);
+	public InternshipValid addInternshipValid(InternshipValid internshipValid) {
+		return internshipValidRepository.saveAndFlush(internshipValid);
 	}
 
 	public void deleteInternshipValid(Long id) {
-		Optional<InternshipValid> s = internshipValidRepository.findById(id);
-		if (s != null)
-			internshipValidRepository.delete(s.get());
+		Optional<InternshipValid> internshipValid = internshipValidRepository.findById(id);
+		if (internshipValid != null)
+			internshipValidRepository.delete(internshipValid.get());
 	}
 
-	public InternshipValid updateInternshipValid(InternshipValid s) {
-		return internshipValidRepository.save(s);
+	public InternshipValid updateInternshipValid(InternshipValid internshipValid) {
+		return internshipValidRepository.save(internshipValid);
 	}
 
 	public Optional<InternshipValid> findInternshipValid(Long id) {

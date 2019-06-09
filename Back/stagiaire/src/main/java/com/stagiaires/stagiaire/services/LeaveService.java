@@ -25,18 +25,18 @@ public class LeaveService {
 		this.leaveRepository = leaveRepository;
 	}
 
-	public Leave addLeave(Leave s) {
-		return leaveRepository.saveAndFlush(s);
+	public Leave addLeave(Leave leave) {
+		return leaveRepository.saveAndFlush(leave);
 	}
 
 	public void deleteLeave(Long id) {
-		Optional<Leave> s = leaveRepository.findById(id);
-		if (s != null)
-			leaveRepository.delete(s.get());
+		Optional<Leave> leave = leaveRepository.findById(id);
+		if (leave != null)
+			leaveRepository.delete(leave.get());
 	}
 
-	public Leave updateLeave(Leave s) {
-		return leaveRepository.save(s);
+	public Leave updateLeave(Leave leave) {
+		return leaveRepository.save(leave);
 	}
 
 	public Optional<Leave> findLeave(Long id) {
