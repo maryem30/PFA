@@ -14,49 +14,47 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.stagiaires.stagiaire.entities.Internship;
-import com.stagiaires.stagiaire.services.InternshipService;
+import com.stagiaires.stagiaire.entities.InternshipValid;
+import com.stagiaires.stagiaire.services.InternshipValidService;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/internship/")
-public class InternshipController {
-	private InternshipService internshipService;
+@RequestMapping("/internshipvalid/")
+public class InternshipValidController {
+	private InternshipValidService internshipService;
 
 	@Autowired
-	public InternshipController(InternshipService internshipService) {
+	public InternshipValidController(InternshipValidService internshipService) {
 		super();
 		this.internshipService = internshipService;
 	}
 
 	@GetMapping(value = "/all")
-	public List<Internship> findInternship() {
+	public List<InternshipValid> findInternshipValid() {
 		return internshipService.findAll();
 	}
 
 	@GetMapping(value = "/{id}")
-	public Optional<Internship> findInternship(@PathVariable Long id) {
-		return internshipService.findInternship(id);
+	public Optional<InternshipValid> findInternshipValid(@PathVariable Long id) {
+		return internshipService.findInternshipValid(id);
 		
 	}
 
 	@PostMapping
-	public void addInternship(@PathVariable(name = "id") Long id, @RequestBody Internship internship) {
+	public void addInternshipValid(@PathVariable(name = "id") Long id, @RequestBody InternshipValid internship) {
 		internship.setId(id);
-		internshipService.addInternship(internship);
+		internshipService.addInternshipValid(internship);
 	}
 	
 	@PutMapping
-	public void updateInternship(@PathVariable(name = "id") Long id, @RequestBody Internship internship) {
+	public void updateInternshipValid(@PathVariable(name = "id") Long id, @RequestBody InternshipValid internship) {
 		internship.setId(id);
-		internshipService.updateInternship(internship);
+		internshipService.updateInternshipValid(internship);
 	}
-	
-
 	
 	
 	@DeleteMapping("/{id}")
-	public void deleteInternship(@PathVariable(name = "id") Long id) {
+	public void deleteInternshipValid(@PathVariable(name = "id") Long id) {
 		internshipService.delete(id);
 	}
 	
