@@ -19,6 +19,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 
 
 import { HttpClientModule } from '@angular/common/http';
+import { InternshipService } from './internship-list/internship.service';
 
 
 @NgModule({
@@ -38,7 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     AdminLayoutComponent,
   ],
-  providers: [StagiaireService],
+  providers: [StagiaireService, InternshipService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -34,9 +34,7 @@ setPage(i,event:any){
   event.preventDefault();
   this.page=i;
   this.getSatgiairePage();
-} 
-    
-    
+}
 affiche() {
     this.stagiaireService.getAll().subscribe(data => {
         this.tabStag = data;
@@ -52,11 +50,10 @@ getSatgiairePage(){
 }
 
 deleteStag(id,i,event:any){
-  this.stagiaireService.deleteStag(id).subscribe((response => {console.log(response); this.stagiaireService.getAll().subscribe(data=>{this.tabStag = data;})
+  this.stagiaireService.deleteStag(id).subscribe((response =>{console.log(response); this.stagiaireService.getAll().subscribe(data=>{this.tabStag = data;})
 
   }));
   this.setPage(i,event);
-  
 }
 
 Search(){

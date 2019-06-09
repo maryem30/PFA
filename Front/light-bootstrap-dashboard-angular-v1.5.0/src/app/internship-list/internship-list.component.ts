@@ -1,3 +1,4 @@
+import { InternshipService } from './internship.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./internship-list.component.scss']
 })
 export class InternshipListComponent implements OnInit {
-
-  constructor() { }
+  public tabStage: Array <any>;
+  stages: Array<any>;
+  constructor(private internshipservice: InternshipService) {}
 
   ngOnInit() {
-  }
+    this.affiche();
+  };
+affiche() {
+  this.internshipservice.getAll().subscribe(data => {
+      this.tabStage = data;
+
+});
+}
 
 }

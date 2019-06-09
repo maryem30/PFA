@@ -1,3 +1,19 @@
 <p>
   internship-list works!
 </p>
+
+<table class="table table-hover table-striped">
+  <tr> <th>teamName</th>
+      <th>teamLeader</th> 
+      <th>nom</th> 
+      <th>prenom</th>
+        
+     </tr>
+      <tr *ngFor="let row of tabStage">
+          <td>{{row.team.teamName}}</td>
+          <td>{{row.team.teamLeader.nom}}</td>
+          <td>{{row.stagiaire.nom}}</td>
+          <td>{{row.stagiaire.prenom}}</td>
+          
+      </tr>
+</table>
