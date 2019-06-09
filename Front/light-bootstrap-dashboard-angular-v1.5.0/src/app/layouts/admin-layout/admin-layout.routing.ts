@@ -1,3 +1,4 @@
+import { InternshipListComponent } from './../../internship-list/internship-list.component';
 import { Routes } from '@angular/router';
 
 import { UserComponent } from '../../stagiaires/user.component';
@@ -8,5 +9,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'user',           component: UserComponent },
     { path: 'table',          component: TablesComponent },
     { path: 'stagiaire-list',        component: StagiairesListComponent },
-    { path: 'move',          component: TablesComponent }
+    { path: 'move',          component: TablesComponent },
+    { path: 'internship',  component: InternshipListComponent}
 ];

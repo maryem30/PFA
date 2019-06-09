@@ -1,5 +1,5 @@
 import { StagiaireService } from './stagiaires/stagiaire.service';
-import { FormGroup, FormBuilder,Validators,ReactiveFormsModule } from '@angular/forms'
+import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms'
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -30,15 +30,13 @@ import { HttpClientModule } from '@angular/common/http';
     FooterModule,
     SidebarModule,
     AppRoutingModule,
-    HttpClientModule, 
+    HttpClientModule,
     ReactiveFormsModule,
     FormsModule
-   
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    
   ],
   providers: [StagiaireService],
   bootstrap: [AppComponent]

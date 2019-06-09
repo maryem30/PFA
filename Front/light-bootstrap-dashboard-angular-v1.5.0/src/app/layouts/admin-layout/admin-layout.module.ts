@@ -1,3 +1,4 @@
+import { InternshipListComponent } from './../../internship-list/internship-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -13,6 +14,7 @@ import { TablesComponent } from '../../stagiaires/stagiaire.component';
 import { StagiairesListComponent } from '../../stagiaires-list/stagiaires-list.component';
 
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { StagiairesListComponent } from '../../stagiaires-list/stagiaires-list.c
   declarations: [
     UserComponent,
     TablesComponent,
-    StagiairesListComponent
+    StagiairesListComponent,
+    InternshipListComponent
   ]
 })
 
