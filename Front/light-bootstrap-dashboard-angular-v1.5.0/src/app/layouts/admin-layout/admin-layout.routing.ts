@@ -1,3 +1,4 @@
+import { InternshipinvalidListComponent } from './../../internshipinvalid-list/internshipinvalid-list.component';
 import { InternshipListComponent } from './../../internship-list/internship-list.component';
 import { Routes } from '@angular/router';
 
@@ -10,5 +11,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'table',          component: TablesComponent },
     { path: 'stagiaire-list',        component: StagiairesListComponent },
     { path: 'move',          component: TablesComponent },
-    { path: 'internship',  component: InternshipListComponent}
+    { path: 'internship',  component: InternshipListComponent},
+    { path: 'internshipinvalid',  component: InternshipinvalidListComponent}
+
 ];
