@@ -1,6 +1,9 @@
 package com.stagiaires.stagiaire.services;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
@@ -50,6 +53,19 @@ public class InternshipService {
 	public void delete(Long id) {
 		internshipRepository.deleteById(id);
 		
+	}
+	
+	@Autowired
+	public List<Map<String, Object>> report(){
+		List<Map<String, Object>> result=new ArrayList<Map<String, Object>>();
+		for(Internship internship : this.findAll()) {
+			Map<String, Object> item=new HashMap<String, Object>();
+			item.put("id", internship.getId());
+			item.put("nom", internship.getStagiaire().getNom());
+			item.put("prenom", internship.getStagiaire().getPrenom());
+			result.add(item);
+		}
+		return result; 
 	}
 
 }
