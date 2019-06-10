@@ -1,3 +1,4 @@
+import { InternshipListComponent } from './../../internship-list/internship-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -11,6 +12,8 @@ import { AdminLayoutRoutes } from './admin-layout.routing';
 import { UserComponent } from '../../stagiaires/user.component';
 import { TablesComponent } from '../../stagiaires/stagiaire.component';
 import { StagiairesListComponent } from '../../stagiaires-list/stagiaires-list.component';
+import { InternshipinvalidListComponent } from '../../internshipinvalid-list/internshipinvalid-list.component';
+
 
 
 @NgModule({
@@ -24,7 +27,9 @@ import { StagiairesListComponent } from '../../stagiaires-list/stagiaires-list.c
   declarations: [
     UserComponent,
     TablesComponent,
-    StagiairesListComponent
+    StagiairesListComponent,
+    InternshipListComponent,
+    InternshipinvalidListComponent,
   ]
 })
 

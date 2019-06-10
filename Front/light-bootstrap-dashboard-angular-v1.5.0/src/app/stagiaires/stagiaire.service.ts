@@ -6,7 +6,7 @@ import { User } from 'app/shared/User';
 
 @Injectable()
 export class StagiaireService {
-  user : User;
+  user: User;
 
   constructor(private http: HttpClient) {
   }
