@@ -49,7 +49,7 @@ public class StagiaireController {
 	}
 	
 	@GetMapping(value = "/page")
-	public Page<Stagiaire> showPage (@RequestParam(defaultValue="0") int page ) {
+	public Page<Stagiaire> showPage (@RequestParam(defaultValue="1") int page ) {
 		return stagiaireRepository.findAll(new PageRequest(page,10));
 		
 	}

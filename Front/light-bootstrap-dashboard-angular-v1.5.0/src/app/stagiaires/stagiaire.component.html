@@ -7,6 +7,7 @@
                         <div class="col-md-3">
                          <div class="form-group">                 
                             <input class="form-control form-control-sm ml-3 w-75" type="text" name="" #myInput  [(ngModel)]="nom" (input)="Search()" placeholder="Search First name" aria-label="Search">
+                            <button class="btn" (click)="toPDF()">telecharger pdf</button>
                             </div>                                       
                         </div>
                           
@@ -31,6 +32,8 @@
                                         <td>{{row.tel}}</td>
                                        
                                         <td><button class="btn" (click)="deleteStag(row.id)"><i class="fa fa-trash"></i></button></td>
+                                        <td><button class="btn" (click)="getById(row.id)"></button></td>
+
                                         
                                     </tr>
                           </table>

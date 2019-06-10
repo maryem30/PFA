@@ -14,6 +14,9 @@ export class StagiaireService {
   getAll(): Observable<any> {
     return this.http.get('http://localhost:9099/stagiaires/all');
   }
+  getById(id: String){
+    return this.http.get('http://localhost:9099/stagiaires/'+id);
+  }
   deleteStag(id: string) {
     return this.http.delete('http://localhost:9099/stagiaires/'+id)
   }

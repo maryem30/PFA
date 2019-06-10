@@ -18,6 +18,12 @@ export class UserComponent implements OnInit {
   
   public tabStag: Array <any>;
   stagiaireForm : FormGroup
+  email : String;
+  password : String;
+  nom: String;
+  prenom : String;
+  cin : String;
+  tel : String;
 
 
   constructor(private  stagiaireService: StagiaireService,private router: Router) {
@@ -25,7 +31,12 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.email = null;
+    this.password = null;
+    this.nom = null;
+    this.prenom = null;
+    this.cin = null;
+    this.tel = null;
     
   }
 

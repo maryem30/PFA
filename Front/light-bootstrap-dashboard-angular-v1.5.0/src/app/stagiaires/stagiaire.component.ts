@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StagiaireService } from './stagiaire.service';
-import { User } from './../shared/User'
+import { User } from './../shared/User';
+import * as jsPDF from 'jspdf'
 
  declare interface TableData {
     headerRow: string[];
@@ -23,6 +24,8 @@ export class TablesComponent implements OnInit {
     private page:number = 0;
     private pages:Array<any>;
     private i:number;
+    public tabStag1: any = {};
+
 
   constructor(private  stagiaireService: StagiaireService) { }
 
@@ -51,12 +54,18 @@ getSatgiairePage(){
   });
 }
 
-deleteStag(id,i,event:any){
+deleteStag(id){
   this.stagiaireService.deleteStag(id).subscribe((response => {console.log(response); this.stagiaireService.getAll().subscribe(data=>{this.tabStag = data;})
 
   }));
-  this.setPage(i,event);
+  this.getSatgiairePage();
   
+  
+}
+toPDF(){
+  const doc = new jsPDF();
+  doc.text("hello word",15,15);
+  doc.save("firstPDF.pdf")
 }
 
 Search(){
@@ -68,6 +77,17 @@ Search(){
   else if (this.nom == "" ){
       this.ngOnInit();
   }
+}
+getById(id : String){
+  this.stagiaireService.getById(id).subscribe(data => {
+    this.tabStag1 = data ;
+    
+  
+});
+this.ngOnInit();
+console.log(this.tabStag1)
+console.log(id);
+
 }
 
 }
