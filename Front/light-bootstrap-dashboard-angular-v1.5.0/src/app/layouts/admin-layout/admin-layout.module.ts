@@ -1,4 +1,5 @@
 import { InternshipListComponent } from './../../internship-list/internship-list.component';
+import { AdministratorListComponent} from './../../administrator-list/administrator-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -27,7 +28,8 @@ import { StagiairesListComponent } from '../../stagiaires-list/stagiaires-list.c
     UserComponent,
     TablesComponent,
     StagiairesListComponent,
-    InternshipListComponent
+    InternshipListComponent,
+    AdministratorListComponent,
   ]
 })
 

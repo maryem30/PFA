@@ -22,6 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { InternshipService } from './internship-list/internship.service';
 
 
+
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -38,8 +40,9 @@ import { InternshipService } from './internship-list/internship.service';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+   
   ],
-  providers: [StagiaireService, InternshipService ],
+  providers: [StagiaireService, InternshipService  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

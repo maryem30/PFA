@@ -23,6 +23,10 @@ export class TablesComponent implements OnInit {
     private page:number = 0;
     private pages:Array<any>;
     private i:number;
+    public prenom: String;
+    public cin : String;
+    public email : String;
+    public tel : String;
 
   constructor(private  stagiaireService: StagiaireService) { }
 
@@ -55,8 +59,17 @@ deleteStag(id,i,event:any){
   }));
   this.setPage(i,event);
 }
+SearchByCin(){
+  if (this.cin != "") {
+      this.tabStag = this.tabStag.filter(response => {return response.cin.toLocaleLowerCase().match(this.cin.toLocaleLowerCase());
+      });
 
-Search(){
+  }
+  else if (this.cin == "" ){
+      this.ngOnInit();
+  }
+}
+SearchByNom(){
   if (this.nom != "") {
       this.tabStag = this.tabStag.filter(response => {return response.nom.toLocaleLowerCase().match(this.nom.toLocaleLowerCase());
       });
@@ -66,5 +79,37 @@ Search(){
       this.ngOnInit();
   }
 }
+
+SearchByPrenom(){
+  if (this.prenom != "") {
+      this.tabStag = this.tabStag.filter(response => {return response.prenom.toLocaleLowerCase().match(this.prenom.toLocaleLowerCase());
+      });
+
+  }
+  else if (this.prenom == "" ){
+      this.ngOnInit();
+  }
+}
+SearchByEmail(){
+  if (this.email != "") {
+      this.tabStag = this.tabStag.filter(response => {return response.email.toLocaleLowerCase().match(this.email.toLocaleLowerCase());
+      });
+
+  }
+  else if (this.email == "" ){
+      this.ngOnInit();
+  }
+}
+SearchByTel(){
+  if (this.tel != "") {
+      this.tabStag = this.tabStag.filter(response => {return response.tel.toLocaleLowerCase().match(this.tel.toLocaleLowerCase());
+      });
+
+  }
+  else if (this.tel == "" ){
+      this.ngOnInit();
+  }
+}
+
 
 }

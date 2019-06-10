@@ -1,3 +1,4 @@
+
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
@@ -5,19 +6,32 @@
                 <div class="card">
                     <div class="content table-responsive table-full-width">         
                         <div class="col-md-3">
-                         <div class="form-group">                 
-                            <input class="form-control form-control-sm ml-3 w-75" type="text" name="" #myInput  [(ngModel)]="nom" (input)="Search()" placeholder="Search First name" aria-label="Search">
-                            </div>                                       
+                                                        
                         </div>
                           
                         <table class="table table-hover table-striped">
-                                <tr> <th>cin</th>
-                                    <th>nom </th> 
-                                    <th>prenom</th> 
+                                <tr> <th  > Cin <br>
+                                    <div class="form-group">                 
+                                   <input class="form-control form-control-sm ml-3 w-75" type="text" cin="" #myInput  [(ngModel)]="cin" (input)="SearchByCin()" placeholder="Recherche " aria-label="Search">
+                                   </div> </th>
+                                    <th >nom <br>
+                                         <div class="form-group">                 
+                                        <input class="form-control form-control-sm ml-3 w-75" type="text" name="" #myInput  [(ngModel)]="nom" (input)="SearchByNom()" placeholder="Recherche " aria-label="Search">
+                                        </div>   </th> 
+                                    <th>prenom<br>
+                                        <div class="form-group">                 
+                                       <input class="form-control form-control-sm ml-3 w-75" type="text" prenom="" #myInput  [(ngModel)]="prenom" (input)="SearchByPrenom()" placeholder="Recherche" aria-label="Search">
+                                       </div> </th> 
                                   <!--  <th>rib</th> 
                                     <th>date_Naissance</th> -->
-                                    <th>email</th>
-                                     <th>tel</th>
+                                    <th>email<br>
+                                        <div class="form-group">                 
+                                       <input class="form-control form-control-sm ml-3 w-75" type="text" email="" #myInput  [(ngModel)]="email" (input)="SearchByEmail()" placeholder="Recherche" aria-label="Search">
+                                       </div> </th>
+                                     <th>tel<br>
+                                        <div class="form-group">                 
+                                       <input class="form-control form-control-sm ml-3 w-75" type="text" tel="" #myInput  [(ngModel)]="tel" (input)="SearchByTel()" placeholder="Recherche" aria-label="Search">
+                                       </div> </th>
                                      <th>supprimer</th>
                                    </tr>
                                     <tr *ngFor="let row of tabStag">
