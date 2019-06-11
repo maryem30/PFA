@@ -5,6 +5,7 @@ import { Routes } from '@angular/router';
 import { UserComponent } from '../../stagiaires/user.component';
 import { TablesComponent } from '../../stagiaires/stagiaire.component';
 import { StagiairesListComponent } from '../../stagiaires-list/stagiaires-list.component';
+import { TeamComponent } from 'app/team/team.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'user',           component: UserComponent },
@@ -12,6 +13,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'stagiaire-list',        component: StagiairesListComponent },
     { path: 'move',          component: TablesComponent },
     { path: 'internship',  component: InternshipListComponent},
-    { path: 'internshipinvalid',  component: InternshipinvalidListComponent}
+    { path: 'internshipinvalid',  component: InternshipinvalidListComponent},
+    { path: 'Team',          component: TeamComponent }
 
 ];

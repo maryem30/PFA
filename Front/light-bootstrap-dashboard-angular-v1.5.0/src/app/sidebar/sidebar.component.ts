@@ -13,7 +13,8 @@ export const ROUTES: RouteInfo[] = [
     { path: '/stagiaire-list', title: 'stagiaire',  icon: 'pe-7s-rocket', class: '' },
     { path: '/internship', title: 'Stages valides',  icon: 'pe-7s-rocket', class: '' },
     { path: '/internshipinvalid', title: 'Stages invalides',  icon: 'pe-7s-rocket', class: '' },
-
+    { path: '/Team', title: 'Team',  icon: 'pe-7s-user', class: '' },
+    
 
 ];
 

@@ -13,6 +13,7 @@ import { UserComponent } from '../../stagiaires/user.component';
 import { TablesComponent } from '../../stagiaires/stagiaire.component';
 import { StagiairesListComponent } from '../../stagiaires-list/stagiaires-list.component';
 import { InternshipinvalidListComponent } from '../../internshipinvalid-list/internshipinvalid-list.component';
+import { TeamComponent } from 'app/team/team.component';
 
 
 
@@ -30,6 +31,7 @@ import { InternshipinvalidListComponent } from '../../internshipinvalid-list/int
     StagiairesListComponent,
     InternshipListComponent,
     InternshipinvalidListComponent,
+    TeamComponent,
   ]
 })
 

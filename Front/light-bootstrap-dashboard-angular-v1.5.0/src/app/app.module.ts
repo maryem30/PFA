@@ -22,6 +22,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { HttpClientModule } from '@angular/common/http';
 import { InternshipService } from './internship-list/internship.service';
 import { InternshipinvalidListComponent } from './internshipinvalid-list/internshipinvalid-list.component';
+import { TeamComponent } from './team/team.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { InternshipinvalidListComponent } from './internshipinvalid-list/interns
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    
   ],
   providers: [StagiaireService, InternshipService, InternshipinvalidService ],
   bootstrap: [AppComponent]
