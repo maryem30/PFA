@@ -7,7 +7,12 @@ import { Observable } from 'rxjs/Observable';
 export class InternshipService {
 
   constructor(private http: HttpClient) { }
-  getAll(): Observable<any> {
-    return this.http.get('http://localhost:9099/internship/all');
+  getAllValid(): Observable<any> {
+    return this.http.get('http://localhost:9099/internshipvalid/all');
   }
+  add(intership) {
+    return this.http.put('http://localhost:9099/internshipvalid/', intership);
+
+  }
+
 }

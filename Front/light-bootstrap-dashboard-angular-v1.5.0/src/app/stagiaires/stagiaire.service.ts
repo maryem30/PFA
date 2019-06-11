@@ -21,8 +21,8 @@ export class StagiaireService {
     return this.http.post('http://localhost:9099/stagiaires/',stagiaire);
   }
 
-  getSatgiaire(page:number){
-    return this.http.get('http://localhost:9099/stagiaires/page?page='+page);
+  getSatgiaire(page: number) {
+    return this.http.get('http://localhost:9099/stagiaires/page?page=' + page);
   }
 }
 

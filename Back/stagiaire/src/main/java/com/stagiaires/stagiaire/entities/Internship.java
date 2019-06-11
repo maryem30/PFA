@@ -28,6 +28,7 @@ public class Internship implements Serializable {
 
 	@Temporal(TemporalType.DATE)
 	private Date dateDebut;
+		
 
 	@Temporal(TemporalType.DATE)
 	private Date dateFin;
