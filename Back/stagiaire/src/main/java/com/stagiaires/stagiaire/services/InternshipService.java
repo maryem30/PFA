@@ -25,18 +25,18 @@ public class InternshipService {
 		this.internshipRepository = internshipRepository;
 	}
 
-	public Internship addInternship(Internship s) {
-		return internshipRepository.saveAndFlush(s);
+	public Internship addInternship(Internship internship) {
+		return internshipRepository.saveAndFlush(internship);
 	}
 
 	public void deleteInternship(Long id) {
-		Optional<Internship> s = internshipRepository.findById(id);
-		if (s != null)
-			internshipRepository.delete(s.get());
+		Optional<Internship> internship = internshipRepository.findById(id);
+		if (internship != null)
+			internshipRepository.delete(internship.get());
 	}
 
-	public Internship updateInternship(Internship s) {
-		return internshipRepository.save(s);
+	public Internship updateInternship(Internship internship) {
+		return internshipRepository.save(internship);
 	}
 
 	public Optional<Internship> findInternship(Long id) {

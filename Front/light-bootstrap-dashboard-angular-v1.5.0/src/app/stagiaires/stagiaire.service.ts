@@ -6,11 +6,13 @@ import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class StagiaireService {
+
   user : User[];
   private data = new BehaviorSubject(this.user);
   currentMessage = this.data.asObservable();
   private click = new BehaviorSubject('add');
   bool = this.click.asObservable();
+
 
   constructor(private http: HttpClient) {
   }

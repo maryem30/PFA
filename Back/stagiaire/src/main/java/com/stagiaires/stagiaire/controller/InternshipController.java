@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.stagiaires.stagiaire.entities.Internship;
@@ -42,16 +41,18 @@ public class InternshipController {
 	}
 
 	@PostMapping
-	public void addStagiaire(@PathVariable(name = "id") Long id, @RequestBody Internship internship) {
+	public void addInternship(@PathVariable(name = "id") Long id, @RequestBody Internship internship) {
 		internship.setId(id);
 		internshipService.addInternship(internship);
 	}
 	
 	@PutMapping
-	public void updateStagiaire(@PathVariable(name = "id") Long id, @RequestBody Internship internship) {
+	public void updateInternship(@PathVariable(name = "id") Long id, @RequestBody Internship internship) {
 		internship.setId(id);
 		internshipService.updateInternship(internship);
 	}
+	
+
 	
 	
 	@DeleteMapping("/{id}")

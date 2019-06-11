@@ -24,18 +24,18 @@ public class UserService {
 		this.userRepository = userRepository;
 	}
 
-	public User addUser(User s) {
-		return userRepository.saveAndFlush(s);
+	public User addUser(User user) {
+		return userRepository.saveAndFlush(user);
 	}
 
 	public void deleteUser(Long id) {
-		Optional<User> s = userRepository.findById(id);
-		if (s != null)
-			userRepository.delete(s.get());
+		Optional<User> user = userRepository.findById(id);
+		if (user != null)
+			userRepository.delete(user.get());
 	}
 
-	public User updateUser(User s) {
-		return userRepository.save(s);
+	public User updateUser(User user) {
+		return userRepository.save(user);
 	}
 
 	public Optional<User> findUser(Long id) {

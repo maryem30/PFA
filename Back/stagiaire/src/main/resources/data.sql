@@ -14,6 +14,6 @@ INSERT INTO Team_leader (id,  tel) VALUES
 INSERT INTO team (id , team_leader_id, team_name) VALUES (1, 6, 'java'), (2, 7, 'php'), (3, 8, 'DevOpps');
 INSERT INTO stagiaire (id,  tel) VALUES
 (1, '25074800'),(2, '25574800'),(3, '29734800'),(4, '23574800'),(5, '25077700');
-INSERT INTO internship (id,date_debut, date_fin, stagiaire_id, team_id) VALUES 
-(1, '2019-05-01', '2019-05-30', 1, 2), (2, '2019-05-09', '2019-06-13', 3, 1),(3, '2019-05-01', '2019-05-30', 2, 1), (4, '2019-05-09', '2019-06-13', 4, 3);
-INSERT INTO leave1 (id, date_debut, date_fin, step, internship_id) VALUES (2, '2019-05-01', '2019-05-16', 0, 1);
+INSERT INTO internship (id,date_debut, date_fin, stagiaire_id, team_id,dtype) VALUES 
+(1, '2019-05-01', '2019-05-30', 1, 2,"True"), (2, '2019-05-09', '2019-06-13', 3, 1,"True"),(3, '2019-05-01', '2019-05-30', 2, 1,"False"), (4, '2019-05-09', '2019-06-13', 4, 3,"False");
+INSERT INTO leave1 (id, date_debut, date_fin,  user_id,step) VALUES (2, '2019-05-01', '2019-05-16',  1,0);

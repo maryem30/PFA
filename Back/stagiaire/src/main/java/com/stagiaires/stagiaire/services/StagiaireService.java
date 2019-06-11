@@ -6,12 +6,8 @@ import java.util.Optional;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.stagiaires.stagiaire.dao.StagiaireRepository;
 import com.stagiaires.stagiaire.entities.Stagiaire;
@@ -29,23 +25,26 @@ public class StagiaireService {
 		this.stagiaireRepository = stagiaireRepository;
 	}
 
-	public Stagiaire addStagiaire(Stagiaire s) {
-		stagiaireRepository.save(s);
+
+	public Stagiaire addStagiaire(Stagiaire stagiaire) {
+		stagiaireRepository.save(stagiaire);
 		System.out.println("ajouter");
 
-		return s;
+		return stagiaire;
+
 	}
 
 	public void deleteStagiaire(Long id) {
-		Optional<Stagiaire> s = stagiaireRepository.findById(id);
-		if (s != null)
-			stagiaireRepository.delete(s.get());
+		Optional<Stagiaire> stagiaire = stagiaireRepository.findById(id);
+		if (stagiaire != null)
+			stagiaireRepository.delete(stagiaire.get());
 	}
 
-	public void updateStagiaire(Stagiaire s) {
-		stagiaireRepository.delete(s);
-		stagiaireRepository.save(s);
+	public void updateStagiaire(Stagiaire stagiaire) {
+		stagiaireRepository.delete(stagiaire);
+		stagiaireRepository.save(stagiaire);
 		System.out.println("modifier");
+
 	}
 
 	public Optional<Stagiaire> findStagiaire(Long id) {
@@ -58,9 +57,7 @@ public class StagiaireService {
 
 	public void delete(Long id) {
 		stagiaireRepository.deleteById(id);
-		
+
 	}
-	
-	
 
 }

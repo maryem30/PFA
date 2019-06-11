@@ -23,18 +23,18 @@ public class TeamLeaderService {
 		this.teamLeaderRepository = teamLeaderRepository;
 	}
 
-	public TeamLeader addTeamLeader(TeamLeader s) {
-		return teamLeaderRepository.saveAndFlush(s);
+	public TeamLeader addTeamLeader(TeamLeader teamLeader) {
+		return teamLeaderRepository.saveAndFlush(teamLeader);
 	}
 
 	public void deleteTeamLeader(Long id) {
-		Optional<TeamLeader> s = teamLeaderRepository.findById(id);
-		if (s != null)
-			teamLeaderRepository.delete(s.get());
+		Optional<TeamLeader> teamLeader = teamLeaderRepository.findById(id);
+		if (teamLeader != null)
+			teamLeaderRepository.delete(teamLeader.get());
 	}
 
-	public TeamLeader updateTeamLeader(TeamLeader s) {
-		return teamLeaderRepository.save(s);
+	public TeamLeader updateTeamLeader(TeamLeader teamLeader) {
+		return teamLeaderRepository.save(teamLeader);
 	}
 
 	public Optional<TeamLeader> findTeamLeader(Long id) {

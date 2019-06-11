@@ -1,5 +1,6 @@
+import { InternshipinvalidService } from './internshipinvalid-list/internshipinvalid.service';
 import { StagiaireService } from './stagiaires/stagiaire.service';
-import { FormGroup, FormBuilder,Validators,ReactiveFormsModule } from '@angular/forms'
+import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms'
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -19,6 +20,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 
 
 import { HttpClientModule } from '@angular/common/http';
+import { InternshipService } from './internship-list/internship.service';
+import { InternshipinvalidListComponent } from './internshipinvalid-list/internshipinvalid-list.component';
 
 
 @NgModule({
@@ -30,17 +33,15 @@ import { HttpClientModule } from '@angular/common/http';
     FooterModule,
     SidebarModule,
     AppRoutingModule,
-    HttpClientModule, 
+    HttpClientModule,
     ReactiveFormsModule,
     FormsModule
-   
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    
   ],
-  providers: [StagiaireService],
+  providers: [StagiaireService, InternshipService, InternshipinvalidService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

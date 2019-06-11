@@ -13,65 +13,123 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
-@Table(name="leave1")
+@Table(name = "leave1")
 public class Leave implements Serializable {
+
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	@JsonFormat(shape = JsonFormat.Shape.OBJECT)
+	public enum LeaveStep {
+		EnAttenteValidationTeamLeader() {
+			@Override
+			public boolean isEnAttenteValidationTeamLeader() {
+				return true;
+			}
+		},
+		EnAttenteValidationRH() {
+			@Override
+			public boolean isEnAttenteValidationRH() {
+				return true;
+			}
+		},
+		NonValide() {
+			@Override
+			public boolean isNonValide() {
+				return true;
+			}
+		},
 
-	@ManyToOne(cascade = CascadeType.ALL)
-	private Internship internship;
+		Valide (){
+			@Override
+		        public boolean isValide() {
+		            return true;
+		        };
+		};
 
-	@Temporal(TemporalType.DATE)
-	private Date dateDebut;
 
-	@Temporal(TemporalType.DATE)
-	private Date dateFin;
-	
-	//step=1 if scrum confirm the leave and step=2 if HR confirm the leave
-	int step;
+		public boolean isNonValide() {
+			// TODO Auto-generated method stub
+			return false;
+		}
+		public boolean isValide() {
+			// TODO Auto-generated method stub
+			return false;
+		}
 
-	public Long getId() {
-		return id;
+		public boolean isEnAttenteValidationRH() {
+			// TODO Auto-generated method stub
+			return false;
+		}
+
+		public boolean isEnAttenteValidationTeamLeader() {
+			// TODO Auto-generated method stub
+			return false;
+		}
+
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
 
-	public Internship getInternship() {
-		return internship;
-	}
+		@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		private Long id;
 
-	public void setInternship(Internship internship) {
-		this.internship = internship;
-	}
+		@ManyToOne(cascade = CascadeType.ALL)
+		private User user;
 
-	public Date getDateDebut() {
-		return dateDebut;
-	}
+		@Temporal(TemporalType.DATE)
+		private Date dateDebut;
 
-	public void setDateDebut(Date dateDebut) {
-		this.dateDebut = dateDebut;
-	}
+		@Temporal(TemporalType.DATE)
+		private Date dateFin;
 
-	public Date getDateFin() {
-		return dateFin;
-	}
+		public LeaveStep getStep() {
+			return step;
+		}
 
-	public void setDateFin(Date dateFin) {
-		this.dateFin = dateFin;
-	}
+		public void setStep(LeaveStep step) {
+			this.step = step;
+		}
 
-	public int getStep() {
-		return step;
-	}
+		LeaveStep step=LeaveStep.EnAttenteValidationTeamLeader;
 
-	public void setStep(int step) {
-		this.step = step;
-	}
-	
+		public Long getId() {
+			return id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public User getUser() {
+			return user;
+		}
+
+		public void setUser(User user) {
+			this.user = user;
+		}
+
+		public Date getDateDebut() {
+			return dateDebut;
+		}
+
+		public void setDateDebut(Date dateDebut) {
+			this.dateDebut = dateDebut;
+		}
+
+		public Date getDateFin() {
+			return dateFin;
+		}
+
+		public void setDateFin(Date dateFin) {
+			this.dateFin = dateFin;
+		}
+
+
+
 }

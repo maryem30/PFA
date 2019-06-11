@@ -26,18 +26,18 @@ public class AdministratorService {
 		this.administratorRepository = administratorRepository;
 	}
 
-	public Administrator addAdministrator(Administrator s) {
-		return administratorRepository.saveAndFlush(s);
+	public Administrator addAdministrator(Administrator administrator) {
+		return administratorRepository.saveAndFlush(administrator);
 	}
 
 	public void deleteAdministrator(Long id) {
-		Optional<Administrator> s = administratorRepository.findById(id);
-		if (s != null)
-			administratorRepository.delete(s.get());
+		Optional<Administrator> administrator = administratorRepository.findById(id);
+		if (administrator != null)
+			administratorRepository.delete(administrator.get());
 	}
 
-	public Administrator updateAdministrator(Administrator s) {
-		return administratorRepository.save(s);
+	public Administrator updateAdministrator(Administrator administrator) {
+		return administratorRepository.save(administrator);
 	}
 
 	public Optional<Administrator> findAdministrator(Long id) {

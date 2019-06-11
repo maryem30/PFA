@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.stagiaires.stagiaire.entities.Leave;
@@ -38,7 +37,7 @@ public class LeaveController {
 	@GetMapping(value = "/{id}")
 	public Optional<Leave> findLeave(@PathVariable Long id) {
 		return leaveService.findLeave(id);
-		
+
 	}
 
 	@PostMapping
@@ -46,17 +45,16 @@ public class LeaveController {
 		leave.setId(id);
 		leaveService.addLeave(leave);
 	}
-	
+
 	@PutMapping
 	public void updateStagiaire(@PathVariable(name = "id") Long id, @RequestBody Leave leave) {
 		leave.setId(id);
 		leaveService.updateLeave(leave);
 	}
-	
+
 	@DeleteMapping("/{id}")
 	public void deleteLeave(@PathVariable(name = "id") Long id) {
 		leaveService.delete(id);
 	}
-	
 
 }
