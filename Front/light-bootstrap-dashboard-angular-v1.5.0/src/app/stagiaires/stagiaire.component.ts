@@ -27,7 +27,7 @@ export class TablesComponent implements OnInit {
     public cin : String;
     public email : String;
     public tel : String;
-
+    
   constructor(private  stagiaireService: StagiaireService) { }
 
   ngOnInit() {
@@ -59,25 +59,30 @@ deleteStag(id,i,event:any){
   }));
   this.setPage(i,event);
 }
+
 SearchByCin(){
   if (this.cin != "") {
       this.tabStag = this.tabStag.filter(response => {return response.cin.toLocaleLowerCase().match(this.cin.toLocaleLowerCase());
       });
+    
+  }
+ 
+      else if (this.cin == ""  ){
+        this.ngOnInit();
+  }
 
-  }
-  else if (this.cin == "" ){
-      this.ngOnInit();
-  }
 }
 SearchByNom(){
   if (this.nom != "") {
       this.tabStag = this.tabStag.filter(response => {return response.nom.toLocaleLowerCase().match(this.nom.toLocaleLowerCase());
       });
+    }
 
-  }
-  else if (this.nom == "" ){
-      this.ngOnInit();
-  }
+    else if (this.nom == "" ){ 
+        this.ngOnInit();
+    }
+  
+  
 }
 
 SearchByPrenom(){
