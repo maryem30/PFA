@@ -61,8 +61,7 @@ public class StagiaireController {
 	}
 	
 	@PutMapping()
-	public void updateStagiaire(@PathVariable(name = "id") Long id, @RequestBody Stagiaire stagiaire) {
-		stagiaire.setId(id);
+	public void updateStagiaire(@RequestBody Stagiaire stagiaire) {
 		stagiaireService.updateStagiaire(stagiaire);
 	}
 	

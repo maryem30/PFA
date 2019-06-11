@@ -3,12 +3,18 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="content table-responsive table-full-width">         
+                    <div class="content table-responsive table-full-width">
+                    <div class="col-md-12">         
                         <div class="col-md-3">
                          <div class="form-group">                 
                             <input class="form-control form-control-sm ml-3 w-75" type="text" name="" #myInput  [(ngModel)]="nom" (input)="Search()" placeholder="Search First name" aria-label="Search">
-                            <button class="btn" (click)="toPDF()">telecharger pdf</button>
                             </div>                                       
+                        </div>
+                        <div class="col-md-7">
+                       </div>
+                        <div class="col-md-2">
+                            <button class="btn" (click)="ajouter()">Ajouter Stagiaire</button>                                     
+                        </div>
                         </div>
                           
                         <table class="table table-hover table-striped">
@@ -20,6 +26,8 @@
                                     <th>email</th>
                                      <th>tel</th>
                                      <th>supprimer</th>
+                                     <th>pdf</th>
+                                     <th>modifier</th>
                                    </tr>
                                     <tr *ngFor="let row of tabStag">
                                 
@@ -32,8 +40,8 @@
                                         <td>{{row.tel}}</td>
                                        
                                         <td><button class="btn" (click)="deleteStag(row.id)"><i class="fa fa-trash"></i></button></td>
-                                        <td><button class="btn" (click)="getById(row.id)"></button></td>
-
+                                        <td><button class="btn" (click)="getById(row.id)"><i class="glyphicon glyphicon-print"></i></button></td>
+                                        <td><button class="btn" (click)="update(row.id)"><i class="glyphicon glyphicon-repeat"></i></button></td>
                                         
                                     </tr>
                           </table>

@@ -31,6 +31,8 @@ public class StagiaireService {
 
 	public Stagiaire addStagiaire(Stagiaire s) {
 		stagiaireRepository.save(s);
+		System.out.println("ajouter");
+
 		return s;
 	}
 
@@ -40,8 +42,10 @@ public class StagiaireService {
 			stagiaireRepository.delete(s.get());
 	}
 
-	public Stagiaire updateStagiaire(Stagiaire s) {
-		return stagiaireRepository.save(s);
+	public void updateStagiaire(Stagiaire s) {
+		stagiaireRepository.delete(s);
+		stagiaireRepository.save(s);
+		System.out.println("modifier");
 	}
 
 	public Optional<Stagiaire> findStagiaire(Long id) {
