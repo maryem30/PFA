@@ -3,11 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { User } from 'app/shared/User';
 import { BehaviorSubject } from 'rxjs';
+import { FormGroup } from '@angular/forms';
 
 @Injectable()
 export class StagiaireService {
 
-  user : User[];
+  user : FormGroup;
   private data = new BehaviorSubject(this.user);
   currentMessage = this.data.asObservable();
   private click = new BehaviorSubject('add');
@@ -17,7 +18,7 @@ export class StagiaireService {
   constructor(private http: HttpClient) {
   }
 
-  changeMessage(data: User[]) {
+  changeMessage(data: FormGroup) {
     this.data.next(data)
   }
 
@@ -41,8 +42,8 @@ export class StagiaireService {
   getSatgiaire(page:number): Observable<any>{
     return this.http.get('http://localhost:9099/stagiaires/page?page='+page);
   }
-  updateSatgiaire(stagiaire: User){
-    return this.http.put('http://localhost:9099/stagiaires/',stagiaire);
+  updateSatgiaire(id : string ,stagiaire: User ){
+    return this.http.put('http://localhost:9099/stagiaires/'+id,stagiaire);
   }
 }
 

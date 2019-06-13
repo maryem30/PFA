@@ -26,7 +26,7 @@ export class UserComponent implements OnInit {
   prenom : String;
   cin : String;
   tel : String;
-  public tabStag2: User[];
+  public tabStag2: FormGroup;
 
 
   constructor(private  stagiaireService: StagiaireService,private router: Router) {
@@ -34,24 +34,18 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.stagiaireService.currentMessage.subscribe(message => this.tabStag2 = message);
+    this.stagiaireService.currentMessage.subscribe((message : FormGroup) => this.tabStag2 = message);
     this.stagiaireService.bool.subscribe(message => this.click = message)  
-    if(this.click=="modifier"){
-    this.email = this.tabStag2['email'];
-    this.password = this.tabStag2['password'];
-    this.nom = this.tabStag2['nom'];
-    this.prenom = this.tabStag2['prenom'];
-    this.cin = this.tabStag2['cin'];
-    this.tel = this.tabStag2['tel'];
-    }else{
+   
       this.email = null;
       this.password = null;
       this.nom = null;
       this.prenom = null;
       this.cin = null;
       this.tel = null;
-    }
-    console.log(this.click);
+    
+      console.log("ajouter")
+
     
 
   }
@@ -67,20 +61,12 @@ affiche() {
 
   saveStagiaire(data): void {
     const user= data.value;
-    if(this.click=="ajouter"){
+
         this.stagiaireService.add(user).subscribe(
       res=>{
         this.affiche();
       }
     );
-    }
-    else{
-        this.stagiaireService.updateSatgiaire(user).subscribe(
-      res=>{
-        this.affiche();
-      }
-    );
-    }
     this.router.navigate(['/move']);
 
     console.log(data.value)

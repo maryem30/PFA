@@ -41,7 +41,7 @@ public class StagiaireService {
 	}
 
 	public void updateStagiaire(Stagiaire stagiaire) {
-		stagiaireRepository.delete(stagiaire);
+
 		stagiaireRepository.save(stagiaire);
 		System.out.println("modifier");
 

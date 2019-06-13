@@ -8,12 +8,14 @@ import { LbdModule } from '../../lbd/lbd.module';
 import { NguiMapModule} from '@ngui/map';
 
 import { AdminLayoutRoutes } from './admin-layout.routing';
+import { UserUpdateComponent } from '../../stagiaires/user-update.component';
 
 import { UserComponent } from '../../stagiaires/user.component';
 import { TablesComponent } from '../../stagiaires/stagiaire.component';
 import { StagiairesListComponent } from '../../stagiaires-list/stagiaires-list.component';
 import { InternshipinvalidListComponent } from '../../internshipinvalid-list/internshipinvalid-list.component';
-
+import { AdministratorListComponent } from '../../administrator-list/administrator-list.component'
+import { TeamComponent } from '../../Team/team.component';
 
 
 @NgModule({
@@ -30,6 +32,10 @@ import { InternshipinvalidListComponent } from '../../internshipinvalid-list/int
     StagiairesListComponent,
     InternshipListComponent,
     InternshipinvalidListComponent,
+    UserUpdateComponent ,
+    AdministratorListComponent,
+    TeamComponent
+
   ]
 })
 

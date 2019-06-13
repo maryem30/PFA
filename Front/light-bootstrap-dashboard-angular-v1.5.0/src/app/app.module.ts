@@ -12,7 +12,6 @@ import { AppRoutingModule } from './app.routing';
 import { NavbarModule } from './shared/navbar/navbar.module';
 import { FooterModule } from './shared/footer/footer.module';
 import { SidebarModule } from './sidebar/sidebar.module';
-import {Router} from '@angular/router';
 
 import { AppComponent } from './app.component';
 
@@ -21,7 +20,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 
 import { HttpClientModule } from '@angular/common/http';
 import { InternshipService } from './internship-list/internship.service';
-import { InternshipinvalidListComponent } from './internshipinvalid-list/internshipinvalid-list.component';
+import { AdministratorService } from './administrator-list/administrator-list.service';
+import { TeamService } from './Team/team.service';
 
 
 @NgModule({
@@ -40,8 +40,9 @@ import { InternshipinvalidListComponent } from './internshipinvalid-list/interns
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    
   ],
-  providers: [StagiaireService, InternshipService, InternshipinvalidService ],
+  providers: [StagiaireService, InternshipService, InternshipinvalidService,AdministratorService,TeamService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
