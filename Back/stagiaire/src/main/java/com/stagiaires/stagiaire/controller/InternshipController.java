@@ -41,9 +41,10 @@ public class InternshipController {
 	}
 
 	@PostMapping
-	public void addInternship(@PathVariable(name = "id") Long id, @RequestBody Internship internship) {
-		internship.setId(id);
+	public Internship addInternship( @RequestBody Internship internship) {
+		
 		internshipService.addInternship(internship);
+		return internship;
 	}
 	
 	@PutMapping

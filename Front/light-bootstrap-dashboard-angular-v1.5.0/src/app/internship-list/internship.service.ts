@@ -8,6 +8,10 @@ export class InternshipService {
 
   constructor(private http: HttpClient) { }
   getAll(): Observable<any> {
-    return this.http.get('http://localhost:9099/internship/all');
+    return this.http.get('http://localhost:9099/internshipvalid/all');
+  }
+
+  add(intenship): Observable<any> {
+    return this.http.post('http://localhost:9099/internshipvalid/',intenship);
   }
 }
