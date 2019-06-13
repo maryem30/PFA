@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StagiaireService } from './stagiaire.service';
 import { User } from './../shared/User';
 import {Router} from '@angular/router';
+import { FormGroup } from '@angular/forms';
 
 
  declare interface TableData {
@@ -23,8 +24,12 @@ export class TablesComponent implements OnInit {
     public tableData1: TableData;
     public tableData2: TableData;
     public tabStag: Array <any>;
-    public tabStag1: Array<any>;
+    public tabStag1: FormGroup;
     public nom : String;
+    public prenom: String;
+    public cin : String;
+    public email : String;
+    public tel : String;
     public contractTypeValid = "False";
     private page:number = 0;
     private pages:Array<any>;
@@ -69,12 +74,15 @@ ajouter(){
 }
 
 update(id){
-  this.stagiaireService.getById(id).subscribe( (data:Array<any>)  => {
+  this.stagiaireService.getById(id).subscribe( (data:FormGroup)  => {
     this.tabStag1 = data;
     this.stagiaireService.changeMessage(this.tabStag1);
     this.stagiaireService.changeClick("modifier");
-
-    this.router.navigate(['/user']);
+    console.log(id);
+    this.tabStag1['id']=id;
+    console.log(this.tabStag1);
+    
+    this.router.navigate(['/updateStagiaire']);
     });
     
 }
@@ -88,14 +96,62 @@ deleteStag(id){
   
 }
 
-Search(){
+SearchByCin(){
+  if (this.cin != "") {
+      this.tabStag = this.tabStag.filter(response => {return response.cin.toLocaleLowerCase().match(this.cin.toLocaleLowerCase());
+      });
+    
+  }
+ 
+      else if (this.cin == ""  ){
+        this.ngOnInit();
+  }
+
+}
+SearchByNom(){
   if (this.nom != "") {
       this.tabStag = this.tabStag.filter(response => {return response.nom.toLocaleLowerCase().match(this.nom.toLocaleLowerCase());
       });
+    }
+
+    else if (this.nom == "" ){ 
+        this.ngOnInit();
+    }
+  
+  
+}
+
+SearchByPrenom(){
+  if (this.prenom != "") {
+      this.tabStag = this.tabStag.filter(response => {return response.prenom.toLocaleLowerCase().match(this.prenom.toLocaleLowerCase());
+      });
 
   }
-  else if (this.nom == "" ){
+  else if (this.prenom == "" ){
       this.ngOnInit();
   }
 }
+
+SearchByEmail(){
+  if (this.email != "") {
+      this.tabStag = this.tabStag.filter(response => {return response.email.toLocaleLowerCase().match(this.email.toLocaleLowerCase());
+      });
+
+  }
+  else if (this.email == "" ){
+      this.ngOnInit();
+  }
 }
+SearchByTel(){
+  if (this.tel != "") {
+      this.tabStag = this.tabStag.filter(response => {return response.tel.toLocaleLowerCase().match(this.tel.toLocaleLowerCase());
+      });
+
+  }
+  else if (this.tel == "" ){
+      this.ngOnInit();
+  }
+}
+
+}
+

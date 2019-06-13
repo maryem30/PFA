@@ -58,8 +58,8 @@ public class User implements Serializable{
 	
 	@Temporal(TemporalType.DATE)
 	private Date dateCIN;
-	private String LieuCIN;
-	private String LieuNes;
+	private String lieuCIN;
+	private String lieuNes;
 	private String adresse;
 	public Date getDateCIN() {
 		return dateCIN;
@@ -70,19 +70,19 @@ public class User implements Serializable{
 	}
 
 	public String getLieuCIN() {
-		return LieuCIN;
+		return lieuCIN;
 	}
 
 	public void setLieuCIN(String lieuCIN) {
-		LieuCIN = lieuCIN;
+		lieuCIN = lieuCIN;
 	}
 
 	public String getLieuNes() {
-		return LieuNes;
+		return lieuNes;
 	}
 
 	public void setLieuNes(String lieuNes) {
-		LieuNes = lieuNes;
+		lieuNes = lieuNes;
 	}
 
 	public String getAdresse() {
