@@ -81,10 +81,9 @@ affiche() {
       }
     );
     }
-    console.log(user.type);
     this.router.navigate(['/move']);
 
-
+    console.log(data.value)
     
   }
 

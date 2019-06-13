@@ -14,4 +14,7 @@ export class InternshipService {
   add(intenship): Observable<any> {
     return this.http.post('http://localhost:9099/internshipvalid/',intenship);
   }
+  getById(id: String):Observable<any>{
+    return this.http.get('http://localhost:9099/internshipvalid/'+id);
+  }
 }

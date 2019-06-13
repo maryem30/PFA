@@ -14,6 +14,8 @@
           <td>{{row.team.teamLeader.nom}}</td>
           <td>{{row.stagiaire.nom}}</td>
           <td>{{row.stagiaire.prenom}}</td>
+          <td><button class="btn" (click)="getPDF(row.id)"><i class="glyphicon glyphicon-print"></i></button></td>
+
           
       </tr>
 </table>

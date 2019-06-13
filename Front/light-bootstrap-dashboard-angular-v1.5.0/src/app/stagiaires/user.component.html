@@ -17,8 +17,32 @@
                                 </div>
                                 <div class="col-md-5">
                                     <div class="form-group">
-                                        <label>password</label>
-                                        <input type="text" class="form-control" placeholder="password"  name="password" [(ngModel)]="password">
+                                        <label>mot de passe</label>
+                                        <input type="text" class="form-control" placeholder="mot de passe"  name="password" [(ngModel)]="password">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>nom</label>
+                                        <input type="text" class="form-control" placeholder="nom"  name="nom" [(ngModel)]="nom">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>prenom</label>
+                                        <input type="text" class="form-control" placeholder="prenom"  name="prenom" [(ngModel)]="prenom">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>sexe</label>
+                                        <select class="form-control"  name="sexe" [(ngModel)]="sexe">
+                                            <option value="Man">homme
+                                            <option value="Women">femme
+                                          </select>
                                     </div>
                                 </div>
                             </div>
@@ -26,31 +50,52 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>First Name</label>
-                                        <input type="text" class="form-control" placeholder="First Name"  name="nom" [(ngModel)]="nom">
+                                        <label>date de naissance</label>
+                                        <input type="date" class="form-control" placeholder="date de naissance"  name="dateNes" [(ngModel)]="dateNes">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Last Name</label>
-                                        <input type="text" class="form-control" placeholder="Last Name"  name="prenom" [(ngModel)]="prenom">
+                                        <label>lieu de naissance</label>
+                                        <input type="text" class="form-control" placeholder="lieu de naissance"  name="lieuNes" [(ngModel)]="lieuNes">
                                     </div>
                                 </div>
-                            </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <div class="form-group">
+                                            <label>adresse</label>
+                                            <input type="text" class="form-control" placeholder="adresse"  name="adresse" [(ngModel)]="adresse">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>tel</label>
+                                            <input type="text" class="form-control" placeholder="tel"  name="tel" [(ngModel)]="tel">
+                                        </div>
+                                    </div>
+                                </div>
 
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>cin</label>
-                                        <input type="text" class="form-control" placeholder="cin"  name="cin" [(ngModel)]="cin">
+                                        <label>numéro cin</label>
+                                        <input type="text" class="form-control" placeholder="numéro cin"  name="cin" [(ngModel)]="cin">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>tel</label>
-                                        <input type="text" class="form-control" placeholder="tel"  name="tel" [(ngModel)]="tel">
+                                        <label>date d'émission cin</label>
+                                        <input type="date" class="form-control" placeholder="date d'émission cin"  name="dateCIN" [(ngModel)]="dateCIN">
                                     </div>
                                 </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>lieu d'émission cin</label>
+                                        <input type="text" class="form-control" placeholder="lieu d'émission cin"  name="lieuCIN" [(ngModel)]="lieuCIN">
+                                    </div>
+                                </div>
+                                
                             </div>
 
                             <button type="submit" class="btn btn-info btn-fill pull-right">save</button>
