@@ -61,8 +61,8 @@ public class StagiaireController {
 		return stagiaire;
 	}
 
-	@PutMapping()
-	public void updateStagiaire(@RequestBody Stagiaire stagiaire) {
+	@PutMapping("/{id}")
+	public void updateStagiaire(@PathVariable(name = "id") Long id ,@RequestBody Stagiaire stagiaire) {
 		stagiaireService.updateStagiaire(stagiaire);
 	}
 

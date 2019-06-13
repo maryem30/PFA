@@ -81,7 +81,7 @@ affiche() {
       }
     );
     }
-    console.log(user);
+    console.log(user.type);
     this.router.navigate(['/move']);
 
 
