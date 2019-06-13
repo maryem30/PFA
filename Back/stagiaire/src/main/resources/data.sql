@@ -17,3 +17,4 @@ INSERT INTO stagiaire (id,  tel) VALUES
 INSERT INTO internship (id,date_debut, date_fin, stagiaire_id, team_id,dtype) VALUES 
 (1, '2019-05-01', '2019-05-30', 1, 2,"True"), (2, '2019-05-09', '2019-06-13', 3, 1,"True"),(3, '2019-05-01', '2019-05-30', 2, 1,"False"), (4, '2019-05-09', '2019-06-13', 4, 3,"False");
 INSERT INTO leave1 (id, date_debut, date_fin,  user_id,step) VALUES (2, '2019-05-01', '2019-05-16',  1,0);
+UPDATE user SET sexe=0 , lieucin = 'Tunis', lieu_nes = 'Sfax', adresse = 'Route Taniour Sfax', cin = '11079897', datecin = '2014-06-02', date_nes = '1996-04-21', email = 'ahmed.lehyani@ieee.org', nom = 'Ahmed', password = '********', prenom = 'LEHYANI' WHERE id = 3;

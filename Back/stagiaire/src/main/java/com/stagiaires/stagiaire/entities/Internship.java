@@ -20,10 +20,10 @@ public class Internship implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne()
 	private Team team;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne()
 	private Stagiaire stagiaire;
 
 	@Temporal(TemporalType.DATE)
