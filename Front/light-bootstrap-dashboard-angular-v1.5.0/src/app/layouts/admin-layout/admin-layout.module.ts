@@ -1,4 +1,3 @@
-import { InternshipListComponent } from './../../internship-list/internship-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -12,11 +11,8 @@ import { UserUpdateComponent } from '../../stagiaires/user-update.component';
 
 import { UserComponent } from '../../stagiaires/user.component';
 import { TablesComponent } from '../../stagiaires/stagiaire.component';
-import { StagiairesListComponent } from '../../stagiaires-list/stagiaires-list.component';
-import { InternshipinvalidListComponent } from '../../internshipinvalid-list/internshipinvalid-list.component';
-import { AdministratorListComponent } from '../../administrator-list/administrator-list.component'
-import { TeamComponent } from '../../Team/team.component';
-
+import { ResourceComponent } from '../../resource/resource.component';
+import { ProjetComponent } from '../../projet/projet.component';
 
 @NgModule({
   imports: [
@@ -29,12 +25,10 @@ import { TeamComponent } from '../../Team/team.component';
   declarations: [
     UserComponent,
     TablesComponent,
-    StagiairesListComponent,
-    InternshipListComponent,
-    InternshipinvalidListComponent,
+   ResourceComponent,
+   ProjetComponent,
     UserUpdateComponent ,
-    AdministratorListComponent,
-    TeamComponent
+   
 
   ]
 })

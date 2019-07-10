@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StagiaireService } from './stagiaire.service';
+import { UserService } from './stagiaire.service';
 import { User } from './../shared/User';
 import {Router} from '@angular/router';
 import { FormGroup } from '@angular/forms';
@@ -38,46 +38,46 @@ export class TablesComponent implements OnInit {
     
 
 
-  constructor(private  stagiaireService: StagiaireService,private router: Router ) { 
+  constructor(private  userService: UserService,private router: Router ) { 
     
   }
 
   ngOnInit() {
     
-    this.getSatgiairePage();
+    this.getUserPage();
 } 
 setPage(i,event:any){
   this.i=i;
   event.preventDefault();
   this.page=i;
-  this.getSatgiairePage();
+  this.getUserPage();
 } 
     
     
 affiche() {
-    this.stagiaireService.getAll().subscribe(data => {
+    this.userService.getAll().subscribe(data => {
         this.tabStag = data;
 
 });
 }
 
-getSatgiairePage(){
-  this.stagiaireService.getSatgiaire(this.page).subscribe(data =>{
+getUserPage(){
+  this.userService.getUser(this.page).subscribe(data =>{
     this.tabStag = data['content'];
     this.pages= new Array(data['totalPages']);
   });
 }
 ajouter(){
-  this.stagiaireService.changeClick("ajouter");
+  this.userService.changeClick("ajouter");
   this.router.navigate(['/user']);
 
 }
 
 update(id){
-  this.stagiaireService.getById(id).subscribe( (data:FormGroup)  => {
+  this.userService.getById(id).subscribe( (data:FormGroup)  => {
     this.tabStag1 = data;
-    this.stagiaireService.changeMessage(this.tabStag1);
-    this.stagiaireService.changeClick("modifier");
+    this.userService.changeMessage(this.tabStag1);
+    this.userService.changeClick("modifier");
     console.log(id);
     this.tabStag1['id']=id;
     console.log(this.tabStag1);
@@ -88,10 +88,10 @@ update(id){
 }
 
 deleteStag(id){
-  this.stagiaireService.deleteStag(id).subscribe((response => {console.log(response); this.stagiaireService.getAll().subscribe(data=>{this.tabStag = data;})
+  this.userService.deleteUser(id).subscribe((response => {console.log(response); this.userService.getAll().subscribe(data=>{this.tabStag = data;})
 
   }));
-  this.getSatgiairePage();
+  this.getUserPage();
   
   
 }

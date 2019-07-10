@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 import { FormGroup } from '@angular/forms';
 
 @Injectable()
-export class StagiaireService {
+export class UserService {
 
   user : FormGroup;
   private data = new BehaviorSubject(this.user);
@@ -27,22 +27,22 @@ export class StagiaireService {
   }
 
   getAll(): Observable<any> {
-    return this.http.get('http://localhost:9099/stagiaires/all');
+    return this.http.get('http://localhost:9099/user/all');
   }
   getById(id: String):Observable<any>{
-    return this.http.get('http://localhost:9099/stagiaires/'+id);
+    return this.http.get('http://localhost:9099/user/'+id);
   }
-  deleteStag(id: string) {
-    return this.http.delete('http://localhost:9099/stagiaires/'+id)
+  deleteUser(id: string) {
+    return this.http.delete('http://localhost:9099/user/'+id)
   }
   add(stagiaire: User): Observable<any> {
-    return this.http.post('http://localhost:9099/stagiaires/',stagiaire);
+    return this.http.post('http://localhost:9099/user/',stagiaire);
   }
 
-  getSatgiaire(page:number): Observable<any>{
-    return this.http.get('http://localhost:9099/stagiaires/page?page='+page);
+  getUser(page:number): Observable<any>{
+    return this.http.get('http://localhost:9099/user/page?page='+page);
   }
-  updateSatgiaire(id : string ,stagiaire: User ){
+  updateUser(id : string ,stagiaire: User ){
     return this.http.put('http://localhost:9099/stagiaires/'+id,stagiaire);
   }
 }

@@ -1,5 +1,4 @@
-import { InternshipinvalidService } from './internshipinvalid-list/internshipinvalid.service';
-import { StagiaireService } from './stagiaires/stagiaire.service';
+import { UserService } from './stagiaires/stagiaire.service';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms'
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,9 +18,12 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 
 
 import { HttpClientModule } from '@angular/common/http';
-import { InternshipService } from './internship-list/internship.service';
-import { AdministratorService } from './administrator-list/administrator-list.service';
-import { TeamService } from './Team/team.service';
+
+import { ResourceComponent } from './resource/resource.component';
+import { ProjetComponent } from './projet/projet.component';
+import { ResourceService } from './resource/resource.service';
+import { ProjetService } from './projet/projet.service';
+import { ModalCompComponent } from './modal-comp/modal-comp.component';
 
 
 @NgModule({
@@ -40,9 +42,12 @@ import { TeamService } from './Team/team.service';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    ModalCompComponent,
+   
+   
     
   ],
-  providers: [StagiaireService, InternshipService, InternshipinvalidService,AdministratorService,TeamService ],
+  providers: [UserService, ResourceService,ProjetService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

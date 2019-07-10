@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms'
-import { StagiaireService } from './stagiaire.service';
+import { UserService } from './stagiaire.service';
 import {Router} from '@angular/router';
 import { User } from './../shared/User';
 
@@ -29,7 +29,7 @@ export class UserComponent implements OnInit {
   public tabStag2: FormGroup;
 
 
-  constructor(private  stagiaireService: StagiaireService,private router: Router) {
+  constructor(private  stagiaireService: UserService,private router: Router) {
 
   }
 

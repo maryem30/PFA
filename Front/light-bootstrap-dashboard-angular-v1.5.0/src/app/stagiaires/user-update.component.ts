@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StagiaireService } from './stagiaire.service';
+import { UserService } from './stagiaire.service';
 import {Router} from '@angular/router';
 import { FormGroup } from '@angular/forms'
 import { User } from './../shared/User';
@@ -23,7 +23,7 @@ export class UserUpdateComponent implements OnInit {
   tel : String;
   public tabStag2: FormGroup;
 
-  constructor(private  stagiaireService: StagiaireService,private router: Router) { }
+  constructor(private  stagiaireService: UserService,private router: Router) { }
 
   ngOnInit() {
     this.stagiaireService.currentMessage.subscribe(message => this.tabStag2 = message);
@@ -48,7 +48,7 @@ export class UserUpdateComponent implements OnInit {
     const user= data.value;
         user['id'] = id;
 
-        this.stagiaireService.updateSatgiaire(id,user).subscribe(
+        this.stagiaireService.updateUser(id,user).subscribe(
       res=>{
         this.affiche();
       }

@@ -1,4 +1,4 @@
-import { StagiaireService } from './../stagiaires/stagiaire.service';
+import { UserService } from './../stagiaires/stagiaire.service';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class StagiairesListComponent implements OnInit {
   public tabStag: Array <any>;
   stagiaires: Array<any>;
-  constructor(private stagiaireService: StagiaireService) { }
+  constructor(private stagiaireService: UserService) { }
 
   ngOnInit() {
     this.stagiaireService.getAll().subscribe(data => {
