@@ -23,7 +23,6 @@ import { ResourceComponent } from './resource/resource.component';
 import { ProjetComponent } from './projet/projet.component';
 import { ResourceService } from './resource/resource.service';
 import { ProjetService } from './projet/projet.service';
-import { ModalCompComponent } from './modal-comp/modal-comp.component';
 
 
 @NgModule({
@@ -37,12 +36,15 @@ import { ModalCompComponent } from './modal-comp/modal-comp.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+  
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    ModalCompComponent,
+   
+  
+  
    
    
     

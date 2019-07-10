@@ -13,6 +13,8 @@ import { UserComponent } from '../../stagiaires/user.component';
 import { TablesComponent } from '../../stagiaires/stagiaire.component';
 import { ResourceComponent } from '../../resource/resource.component';
 import { ProjetComponent } from '../../projet/projet.component';
+import { ModalComponent } from '../../modal/modal.component';
+
 
 @NgModule({
   imports: [
@@ -28,6 +30,10 @@ import { ProjetComponent } from '../../projet/projet.component';
    ResourceComponent,
    ProjetComponent,
     UserUpdateComponent ,
+    ModalComponent 
+    
+   
+    
    
 
   ]

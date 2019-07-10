@@ -55,7 +55,7 @@ export class UserUpdateComponent implements OnInit {
     );
     console.log(id)
     console.log(user)
-    this.router.navigate(['/move']);
+    this.router.navigate(['/table']);
 
     
     

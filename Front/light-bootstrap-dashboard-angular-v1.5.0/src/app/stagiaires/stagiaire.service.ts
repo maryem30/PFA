@@ -36,14 +36,14 @@ export class UserService {
     return this.http.delete('http://localhost:9099/user/'+id)
   }
   add(stagiaire: User): Observable<any> {
-    return this.http.post('http://localhost:9099/user/',stagiaire);
+    return this.http.put('http://localhost:9099/user/',stagiaire);
   }
 
   getUser(page:number): Observable<any>{
     return this.http.get('http://localhost:9099/user/page?page='+page);
   }
   updateUser(id : string ,stagiaire: User ){
-    return this.http.put('http://localhost:9099/stagiaires/'+id,stagiaire);
+    return this.http.put('http://localhost:9099/user/'+id,stagiaire);
   }
 }
 

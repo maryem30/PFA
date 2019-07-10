@@ -7,6 +7,7 @@ import { ResourceComponent } from '../../resource/resource.component';
 import { ProjetComponent } from '../../projet/projet.component';
 
 
+
 export const AdminLayoutRoutes: Routes = [
     { path: 'user',           component: UserComponent },
     { path: 'table',          component: TablesComponent },
@@ -18,6 +19,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'resource',  component: ResourceComponent },
     { path: 'projet',  component: ProjetComponent},
 
+    
     
 
 

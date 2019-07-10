@@ -29,13 +29,13 @@ export class UserComponent implements OnInit {
   public tabStag2: FormGroup;
 
 
-  constructor(private  stagiaireService: UserService,private router: Router) {
+  constructor(private  userService: UserService,private router: Router) {
 
   }
 
   ngOnInit() {
-    this.stagiaireService.currentMessage.subscribe((message : FormGroup) => this.tabStag2 = message);
-    this.stagiaireService.bool.subscribe(message => this.click = message)  
+    this.userService.currentMessage.subscribe((message : FormGroup) => this.tabStag2 = message);
+    this.userService.bool.subscribe(message => this.click = message)  
    
       this.email = null;
       this.password = null;
@@ -51,7 +51,7 @@ export class UserComponent implements OnInit {
   }
 
 affiche() {
-    this.stagiaireService.getAll().subscribe(data => {
+    this.userService.getAll().subscribe(data => {
         this.tabStag = data;
 
 }
@@ -62,12 +62,12 @@ affiche() {
   saveStagiaire(data): void {
     const user= data.value;
 
-        this.stagiaireService.add(user).subscribe(
+        this.userService.add(user).subscribe(
       res=>{
         this.affiche();
       }
     );
-    this.router.navigate(['/move']);
+    this.router.navigate(['stagiaire.component.html']);
 
     console.log(data.value)
     
